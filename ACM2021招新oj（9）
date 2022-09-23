@@ -1,0 +1,50 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+
+//题目网址：http://172.16.77.117/problem.php?cid=1055&pid=8
+int time(int n)
+{
+	if (n % 2 == 0)
+	{
+		return n;
+	}
+	else if (n == 1)
+	{
+		return 2;
+	}
+	else if (n % 2 != 0 && n != 1)
+	{
+		return n + 1;
+	}
+}
+
+int main()
+{
+	int n = 0;
+	printf("请输入鸡蛋个数\n");
+	scanf("%d", &n);
+
+	int min = 0;
+	while (1)
+	{
+		if (n < 1)
+		{
+			printf("至少要吃一个蛋，请重新输入\n");
+			break;
+		}
+		else if (n <= 10000 && n >= 1)
+		{
+			//开始计算
+			min = time(n);
+			printf("%d", min);
+			break;
+		}
+		else if (n > 10000)
+		{
+			printf("吃不了那么多，请重新输入\n");
+			break;
+		}
+	}
+
+	return 0;
+}
