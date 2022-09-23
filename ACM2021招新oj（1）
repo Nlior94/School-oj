@@ -1,0 +1,42 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+
+//题目网址：http://172.16.77.117/problem.php?cid=1055&pid=0
+int  weishu(int sum)
+{
+	int i = 0;
+	while (sum / 10)
+	{
+		i++;
+		sum = sum / 10;
+	}
+	return i;
+}
+
+int main()
+{
+	int i = 0;
+	printf("请输入您想要的位数\n");
+	scanf("%d", & i);
+
+	int m = 0;
+	int n = 0;
+	printf("请输入您要相加的数\n");
+	scanf("%d %d", &m, &n);
+
+	int sum = 0;
+	sum = m + n;
+	int w = weishu(sum);
+
+	int j = 0;
+	int a = 1;
+	for (j = 0; j < w; j++)
+	{
+		a = a * 10;
+	}
+
+	int b = sum % a;
+	printf("%d", b);
+
+	return 0;
+}
