@@ -1,0 +1,24 @@
+//题目：https://oj.kexie.space/problem/500
+#include <stdio.h>
+
+int main()
+{
+	//Sn =na1 + (n - 1)/2;
+	//a1 = 1;n = 1;
+	int n = 0;
+	int total = 0;
+	scanf("%d", &n);
+
+	total = n + n * (n - 1) / 2;
+
+	if (n >= 7)
+	{
+		int a = 0;
+		a = n / 7;
+		total = total - a * 5;
+	}
+
+	printf("%d", total);
+
+	return 0;
+}
